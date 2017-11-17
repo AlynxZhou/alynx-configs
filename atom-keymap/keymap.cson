@@ -1,0 +1,104 @@
+# Your keymap
+#
+# Atom keymaps work similarly to style sheets. Just as style sheets use
+# selectors to apply styles to elements, Atom keymaps use selectors to associate
+# keystrokes with events in specific contexts. Unlike style sheets however,
+# each selector can only be declared once.
+#
+# You can create a new keybinding in this file by typing "key" and then hitting
+# tab.
+#
+# Here"s an example taken from Atom"s built-in keymap:
+#
+# "atom-text-editor":
+#   "enter": "editor:newline"
+#
+# "atom-workspace":
+#   "ctrl-shift-p": "core:move-up"
+#   "ctrl-p": "core:move-down"
+#
+# You can find more information about keymaps in these guides:
+# * http://flight-manual.atom.io/using-atom/sections/basic-customization/#_customizing_keybindings
+# * http://flight-manual.atom.io/behind-atom/sections/keymaps-in-depth/
+#
+# If you"re having trouble with your keybindings not working, try the
+# Keybinding Resolver: `Cmd+.` on macOS and `Ctrl+.` on other platforms. See the
+# Debugging Guide for more information:
+# * http://flight-manual.atom.io/hacking-atom/sections/debugging/#check-the-keybindings
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+"body":
+  "ctrl-n": "core:move-down"
+  "ctrl-p": "core:move-up"
+  "ctrl-f": "core:move-right"
+  "ctrl-b": "core:move-left"
+  "ctrl-v": "core:page-down"
+  "alt-v": "core:page-up"
+  "ctrl-/": "core:undo"
+  "ctrl-shift-?": "core:redo"
+  "ctrl-shift-N": "core:select-down"
+  "ctrl-shift-P": "core:select-up"
+  "ctrl-shift-F": "core:select-right"
+  "ctrl-shift-B": "core:select-left"
+  "ctrl-shift-V": "core:select-page-down"
+  "alt-shift-V": "core:select-page-up"
+  "ctrl-w": "core:cut"
+  "alt-w": "core:copy"
+  "ctrl-y": "core:paste"
+  "ctrl-g": "core:cancel"
+  "ctrl-c": "core:cancel"
+  "ctrl-d": "core:delete"
+  "ctrl-h": "core:backspace"
+  "ctrl-x": "unset!"
+  "ctrl-x ctrl-0": "pane:close"
+  "ctrl-x ctrl-2": "pane:split-down-and-copy-active-item"
+  "ctrl-x ctrl-3": "pane:split-right-and-copy-active-item"
+  "ctrl-x ctrl-o": "window:focus-next-pane"
+  "ctrl-x ctrl-k": "core:close"
+  "ctrl-x ctrl-n": "application:new-file"
+  "ctrl-x ctrl-f": "advanced-open-file:toggle"
+  "ctrl-x ctrl-d": "application:add-project-folder"
+  "ctrl-x ctrl-s": "core:save"
+  "ctrl-x ctrl-w": "core:save-as"
+  "ctrl-x ctrl-c": "application:quit"
+  "ctrl-r ctrl-r": "unset!"
+
+"atom-text-editor":
+  "ctrl-x ctrl-r": "regex-railroad-diagram:show"
+  "ctrl-a": "editor:move-to-first-character-of-line"
+  "ctrl-e": "editor:move-to-end-of-screen-line"
+  "ctrl-shift-A": "editor:select-to-first-character-of-line"
+  "ctrl-shift-E": "editor:select-to-end-of-line"
+  "ctrl-s": "find-and-replace:show"
+  "alt-x": "command-palette:toggle"
+  "alt-t": "editor:transpose"
+  "ctrl-d": "unset!"
+  "ctrl-x ctrl-l": "grammar-selector:show"
+
+"atom-text-editor.autocomplete-active":
+  "ctrl-g": "autocomplete-plus:cancel"
+
+"atom-workspace atom-text-editor":
+  "ctrl-x ctrl-h": "core:select-all"
+  "alt-f": "editor:move-to-end-of-word"
+  "alt-b": "editor:move-to-beginning-of-word"
+  "alt-shift-F": "editor:select-to-end-of-word"
+  "alt-shift-B": "editor:select-to-beginning-of-word"
+  "alt-d": "editor:delete-to-end-of-word"
+  "alt-h": "editor:delete-to-beginning-of-word"
+  "alt-<": "core:move-to-top"
+  "alt->": "core:move-to-bottom"
+
+"atom-workspace atom-text-editor:not([mini])":
+  "ctrl-/": "unset!"
+  "alt-;": "editor:toggle-line-comments"
+  "ctrl-;": "editor:toggle-line-comments"
+  "alt-[": "editor:outdent-selected-rows"
+  "alt-]": "editor:indent-selected-rows"
+  "alt-n": "editor:move-line-down"
+  "alt-p": "editor:move-line-up"
+  "alt-g": "go-to-line:toggle"
