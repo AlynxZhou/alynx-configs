@@ -61,7 +61,7 @@ function jobs_status() {
 }
 
 ## Prompt.
-# Here is the LEFT PROMPT containing username `%n`, hostname `%m`, directory `%~`, git info `$(git_status)`, result status `${result_status}` and the `%#`.
-PROMPT='%K{238}%F{236}%f%F{red}%n%f@%F{cyan}%m%F{234}%f:%F{yellow}%~%f%k%K{240}%F{238}%f$(git_status)%k%K{242}%F{240}%f${result_status}%k%F{242}%f %# '
+# Here is the LEFT PROMPT containing username `%n`, hostname `%m`, directory `%~`, git info `$(git_status)`, result status `${result_status}`, jobs `$(jobs_status)` and the `%#`.
+PROMPT='%K{238}%F{236}%f%F{red}%n%f@%F{cyan}%m%F{234}%f:%F{yellow}%~%f%k%K{240}%F{238}%f$(git_status)%k%K{242}%F{240}%f${result_status}$(jobs_status)%k%F{242}%f %# '
 # Here is the RIGHT PROMPT containing battery `$(battery_status)`, os `$(os_status)`, jobs `$(jobs_status)`, time `%D{%H:%M:%S}` and date `%D{%Y-%m-%d}`.
-RPROMPT='%F{244}%f%K{244}%F{235}$(battery_status)%k%K{244}%f%F{254}%f%F{235}$(os_status)$(jobs_status)%f%F{246}%f%k%K{246}%F{235}%D{%H:%M:%S}%f%F{254}%f%F{235}%D{%Y-%m-%d}%f%F{236}%f%k'
+#RPROMPT='%F{244}%f%K{244}%F{235}$(battery_status)%k%K{244}%f%F{254}%f%F{235}$(os_status)$(jobs_status)%f%F{246}%f%k%K{246}%F{235}%D{%H:%M:%S}%f%F{254}%f%F{235}%D{%Y-%m-%d}%f%F{236}%f%k'
