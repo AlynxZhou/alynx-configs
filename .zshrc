@@ -167,7 +167,7 @@ alias vi="nvim"
 # 提示符设置
 ## Last command result.
 # True is nothing. False is red `!`.
-local result_status=%(?::"%F{red}%B !%b%f")
+local result_status=%(?::"%F{red}!%f")
 
 ## OS detection.
 function os_status() {
@@ -192,9 +192,9 @@ function git_status() {
 	if [[ -n $(command git rev-parse --short HEAD 2> /dev/null) ]]; then
 		# Check for dirty or not.
 		if [[ -n $(command git status --porcelain --ignore-submodules=dirty 2> /dev/null | tail -n1) ]]; then
-			echo " <%F{cyan}"${ref#refs/heads/}"%f%F{yellow}*%f>"
+			echo ":%F{blue}"${ref#refs/heads/}"%f%F{yellow}*%f"
 		else
-			echo " <%F{cyan}"${ref#refs/heads/}"%f>"
+			echo ":%F{blue}"${ref#refs/heads/}"%f"
 		fi
 	fi
 }
@@ -203,13 +203,13 @@ function git_status() {
 function jobs_status() {
 	local JOBS=$(jobs -l | wc -l)
 	if [[ ${JOBS} != "0" ]]; then
-		echo " (%F{green}"${JOBS}"&%f)"
+		echo ":%F{green}"${JOBS}"&%f"
 	fi
 }
 
 ## Prompt.
 # Here is the LEFT PROMPT containing username `%n`, hostname `%m`, directory `%~`, git info `$(git_status)`, result status `${result_status}`, jobs `$(jobs_status)` and the `%#`.
-PROMPT='[%F{red}%n%f@%F{cyan}%m%f:%F{yellow}%3~%f]$(git_status)$(jobs_status)${result_status} %# '
+PROMPT='[%F{red}%n%f@%F{cyan}%m%f:%F{yellow}%3~%f$(git_status)$(jobs_status)]${result_status} %# '
 # Here is the RIGHT PROMPT containing battery `$(battery_status)`, os `$(os_status)`, jobs `$(jobs_status)`, time `%D{%H:%M:%S}` and date `%D{%Y-%m-%d}`.
 #RPROMPT='%F{244}%f%K{244}%F{235}$(battery_status)%k%K{244}%f%F{254}%f%F{235}$(os_status)$(jobs_status)%f%F{246}%f%k%K{246}%F{235}%D{%H:%M:%S}%f%F{254}%f%F{235}%D{%Y-%m-%d}%f%F{236}%f%k'
 
